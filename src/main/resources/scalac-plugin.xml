@@ -1,0 +1,4 @@
+<plugin>
+  <name>insights</name>
+  <classname>de.aquanauten.insights.ExtractInsightsPlugin</classname>
+</plugin>
