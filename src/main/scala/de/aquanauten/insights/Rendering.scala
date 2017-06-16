@@ -5,7 +5,7 @@ trait Rendering[A] {
 }
 
 object Rendering {
-  def render[A](a: A)(implicit rendering: Rendering[A]) = rendering.render(a)
+  def render[A](a: A)(implicit rendering: Rendering[A]): String = rendering.render(a)
 }
 
 object JsonRendering {
@@ -67,7 +67,7 @@ object JsonRendering {
     }
   }
 
-  def render(result: CompileUnit) = Rendering.render(result)
+  def render(result: CompileUnit): String = Rendering.render(result)
 }
 
 
@@ -105,28 +105,32 @@ object PlantUMLRendering {
   implicit object ClassHandleRendering extends Rendering[ClassHandle] {
     override def render(handle: ClassHandle): String = {
       def typeName = handle.fullName
-      def dependencies = handle.dependencies.map(d => s"$typeName ..> $d")
       def extensions = handle.baseClasses.map(d => s"""${d.fullName} <|-- $typeName""")
       s"""class $typeName {
          |${handle.vals.map(Rendering.render(_)).mkString("\n")}
          |${handle.methods.map(Rendering.render(_)).mkString("\n")}
          |}
-         |${dependencies.mkString("\n")}
          |${extensions.mkString("\n")}""".stripMargin
     }
   }
 
   implicit object CompileUnitRendering extends Rendering[CompileUnit] {
     override def render(unit: CompileUnit): String = {
+      // simplify diagrams: collect dependencies from package (not class)
+      val packageDependencies = unit.classes.flatMap { clazz =>
+        clazz.dependencies.map(d => clazz.packageName -> d)
+      }.distinct.map{ case (key, value) => s"$key ..> $value"}
+      val classes = unit.classes.filter(!_.isObject).map(Rendering.render(_))
       s"""
          |@startuml
-         |${unit.classes.filter(!_.isObject).map(Rendering.render(_)).mkString("\n")}
+         |${classes.mkString("\n")}
+         |${packageDependencies.mkString("\n")}
          |@enduml
       """.stripMargin
     }
   }
 
-  def render(result: CompileUnit) = Rendering.render(result)
+  def render(result: CompileUnit): String = Rendering.render(result)
 }
 
 object DotRendering {
