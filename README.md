@@ -10,7 +10,7 @@ Shows which package depends on which other package in the project.
 Example: if class `test.foo.Foo` uses type `test.bla.Bla`, then package `test.foo` depends on package `test.bla`.
 The resulting package dependency diagram looks like this:
 
-![Example](docs/images/package_dependency.png)
+![Example](docs/images/package_dependency.svg)
 
 A Json is created, that has all package dependencies and can be used for post processing the data. See [Example](docs/examples/package_dependency.json)
 
@@ -19,7 +19,7 @@ A Json is created, that has all package dependencies and can be used for post pr
 For every package that is compiled in the current project, a package diagram is created.
 It shows all classes of the package with information about properties and methods as well as all dependencies.
 
-![Example](docs/images/test.foo.png)
+![Example](docs/images/test.foo.svg)
 
 
 ### Class summary
@@ -28,7 +28,7 @@ A class summary is created for all classes in the project, which can be overwhel
 Proper filters should be applied to only see reasonable information.
 
 
-![Example](docs/images/class_summary.png)
+![Example](docs/images/class_summary.svg)
 
 A Json is created, that has all collected information and can be used for post processing the data.
 See [Example](docs/examples/class_summary.json)
