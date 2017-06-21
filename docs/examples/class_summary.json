@@ -1,0 +1,335 @@
+{
+  "classes": [
+    {
+      "kind": "class",
+      "name": "Foo",
+      "packageName": "test.foo",
+      "fullname": "test.foo.Foo",
+      "fullTypedName": "test.foo.Foo[test.foo.Foo.A]",
+      "typeParams": [
+        {
+          "name": "A",
+          "fullName": "test.foo.Foo.A",
+          "typeArgs": []
+        }
+      ],
+      "extends": [
+        {
+          "name": "SomeTrait",
+          "fullName": "test.bla.SomeTrait",
+          "typeArgs": []
+        },
+        {
+          "name": "Example",
+          "fullName": "test.foo.Example",
+          "typeArgs": []
+        }
+      ],
+      "isObject": false,
+      "isTrait": false,
+      "isAbstract": false,
+      "vals": [
+        {
+          "name": "blas",
+          "type": {
+            "name": "List",
+            "fullName": "List[test.bla.Bla]",
+            "typeArgs": [
+              {
+                "name": "Bla",
+                "fullName": "test.bla.Bla",
+                "typeArgs": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "foos",
+          "type": {
+            "name": "Map",
+            "fullName": "Map[String, List[A]]",
+            "typeArgs": [
+              {
+                "name": "String",
+                "fullName": "String",
+                "typeArgs": []
+              },
+              {
+                "name": "List",
+                "fullName": "List[A]",
+                "typeArgs": [
+                  {
+                    "name": "A",
+                    "fullName": "test.foo.Foo.A",
+                    "typeArgs": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "test",
+          "returnType": {
+            "name": "String",
+            "fullName": "String",
+            "typeArgs": []
+          },
+          "params": []
+        },
+        {
+          "name": "nothing",
+          "returnType": {
+            "name": "Unit",
+            "fullName": "scala.Unit",
+            "typeArgs": []
+          },
+          "params": [
+            {
+              "name": "a",
+              "type": {
+                "name": "Int",
+                "fullName": "Int",
+                "typeArgs": []
+              }
+            }
+          ]
+        },
+        {
+          "name": "nothing",
+          "returnType": {
+            "name": "Unit",
+            "fullName": "scala.Unit",
+            "typeArgs": []
+          },
+          "params": [
+            {
+              "name": "a",
+              "type": {
+                "name": "Int",
+                "fullName": "Int",
+                "typeArgs": []
+              }
+            },
+            {
+              "name": "b",
+              "type": {
+                "name": "String",
+                "fullName": "String",
+                "typeArgs": []
+              }
+            }
+          ]
+        }
+      ],
+      "dependencies": [
+        "test.bla.Bla",
+        "test.bla.SomeTrait"
+      ]
+    },
+    {
+      "kind": "trait",
+      "name": "Example",
+      "packageName": "test.foo",
+      "fullname": "test.foo.Example",
+      "fullTypedName": "test.foo.Example",
+      "typeParams": [],
+      "extends": [],
+      "isObject": false,
+      "isTrait": true,
+      "isAbstract": true,
+      "vals": [],
+      "methods": [
+        {
+          "name": "nothing",
+          "returnType": {
+            "name": "Unit",
+            "fullName": "scala.Unit",
+            "typeArgs": []
+          },
+          "params": [
+            {
+              "name": "a",
+              "type": {
+                "name": "Int",
+                "fullName": "Int",
+                "typeArgs": []
+              }
+            }
+          ]
+        }
+      ],
+      "dependencies": [
+        "test.bla.Bla",
+        "test.bla.SomeTrait"
+      ]
+    },
+    {
+      "kind": "object",
+      "name": "Foo2",
+      "packageName": "test.foo",
+      "fullname": "test.foo.Foo.Foo2",
+      "fullTypedName": "test.foo.Foo.Foo2",
+      "typeParams": [],
+      "extends": [],
+      "isObject": true,
+      "isTrait": false,
+      "isAbstract": false,
+      "vals": [
+        {
+          "name": "Default",
+          "type": {
+            "name": "String",
+            "fullName": "String",
+            "typeArgs": []
+          }
+        }
+      ],
+      "methods": [],
+      "dependencies": [
+        "test.bla.Bla",
+        "test.bla.SomeTrait"
+      ]
+    },
+    {
+      "kind": "object",
+      "name": "Foo",
+      "packageName": "test.foo",
+      "fullname": "test.foo.Foo",
+      "fullTypedName": "test.foo.Foo",
+      "typeParams": [],
+      "extends": [],
+      "isObject": true,
+      "isTrait": false,
+      "isAbstract": false,
+      "vals": [
+        {
+          "name": "Default",
+          "type": {
+            "name": "String",
+            "fullName": "String",
+            "typeArgs": []
+          }
+        }
+      ],
+      "methods": [],
+      "dependencies": [
+        "test.bla.Bla",
+        "test.bla.SomeTrait"
+      ]
+    },
+    {
+      "kind": "class",
+      "name": "Bla",
+      "packageName": "test.bla",
+      "fullname": "test.bla.Bla",
+      "fullTypedName": "test.bla.Bla",
+      "typeParams": [],
+      "extends": [
+        {
+          "name": "AbstractBla",
+          "fullName": "test.bla.AbstractBla",
+          "typeArgs": []
+        },
+        {
+          "name": "SomeTrait",
+          "fullName": "test.bla.SomeTrait",
+          "typeArgs": []
+        }
+      ],
+      "isObject": false,
+      "isTrait": false,
+      "isAbstract": false,
+      "vals": [
+        {
+          "name": "seq",
+          "type": {
+            "name": "Seq",
+            "fullName": "Seq[Int]",
+            "typeArgs": [
+              {
+                "name": "Int",
+                "fullName": "Int",
+                "typeArgs": []
+              }
+            ]
+          }
+        }
+      ],
+      "methods": [],
+      "dependencies": []
+    },
+    {
+      "kind": "abstract class",
+      "name": "AbstractBla",
+      "packageName": "test.bla",
+      "fullname": "test.bla.AbstractBla",
+      "fullTypedName": "test.bla.AbstractBla",
+      "typeParams": [],
+      "extends": [
+        {
+          "name": "SomeTrait",
+          "fullName": "test.bla.SomeTrait",
+          "typeArgs": []
+        }
+      ],
+      "isObject": false,
+      "isTrait": false,
+      "isAbstract": true,
+      "vals": [],
+      "methods": [],
+      "dependencies": []
+    },
+    {
+      "kind": "trait",
+      "name": "SomeTrait",
+      "packageName": "test.bla",
+      "fullname": "test.bla.SomeTrait",
+      "fullTypedName": "test.bla.SomeTrait",
+      "typeParams": [],
+      "extends": [],
+      "isObject": false,
+      "isTrait": true,
+      "isAbstract": true,
+      "vals": [
+        {
+          "name": "bla",
+          "type": {
+            "name": "Int",
+            "fullName": "Int",
+            "typeArgs": []
+          }
+        }
+      ],
+      "methods": [
+        {
+          "name": "blubber",
+          "returnType": {
+            "name": "String",
+            "fullName": "String",
+            "typeArgs": []
+          },
+          "params": []
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "kind": "object",
+      "name": "Bla",
+      "packageName": "test.bla",
+      "fullname": "test.bla.Bla",
+      "fullTypedName": "test.bla.Bla",
+      "typeParams": [],
+      "extends": [],
+      "isObject": true,
+      "isTrait": false,
+      "isAbstract": false,
+      "vals": [],
+      "methods": [],
+      "dependencies": []
+    }
+  ]
+}
