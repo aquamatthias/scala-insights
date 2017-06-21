@@ -98,7 +98,8 @@ object PlantUMLRendering {
     override def render(method: MethodHandle): String = {
       val returnT = method.returnType.simple
       val returnString = if (returnT == "Unit") "" else ": " + returnT
-      s"  {method} ${method.name}(${method.params.keys.mkString(", ")})$returnString"
+      val params = method.params.map{case (name, typeH) => s"$name: ${typeH.simple}"}.mkString(", ")
+      s"  {method} ${method.name}($params)$returnString"
     }
   }
 
