@@ -23,8 +23,8 @@ class ExtractInsightsPlugin(override val global: Global) extends Plugin {
   import ExtractInsightsPlugin._
 
   // meta data for the scala compiler
-  override val name: String = "extractdeps"
-  override val description: String = "Extract dependencies from the AST"
+  override val name: String = "insights"
+  override val description: String = "Extract insights from the AST"
   override val components = List(ExtractInsightsPluginComponent)
 
   // Options of this plugin, set via -P:<name>:<value>
